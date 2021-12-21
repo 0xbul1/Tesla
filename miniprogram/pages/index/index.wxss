@@ -1,6 +1,7 @@
 .tesla .swiper-container {
   width: 100%;
   height: 85vh;
+  position: relative;
 }
 .tesla .swiper-container swiper {
   height: 100%;
@@ -15,7 +16,8 @@
   width: 100%;
   height: 100%;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content {
+.tesla .swiper-container .swiper-content {
+  pointer-events: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -25,37 +27,40 @@
   flex-direction: column;
   align-items: center;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .title {
+.tesla .swiper-container .swiper-content .title {
   font-size: 80rpx;
   margin-top: 250rpx;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .description {
+.tesla .swiper-container .swiper-content .description {
   width: 100%;
-  margin-top: 200rpx;
+  margin-top: 460rpx;
   display: flex;
   justify-content: space-evenly;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .description .desc-item {
+.tesla .swiper-container .swiper-content .description .desc-item {
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .description .desc-item .desc-title {
+.tesla .swiper-container .swiper-content .description .desc-item .desc-title {
+  margin-top: 20rpx;
   font-size: 50rpx;
+  animation: fadeIn 1s;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .description .desc-item .desc-subtitle {
-  margin-top: 10rpx;
+.tesla .swiper-container .swiper-content .description .desc-item .desc-subtitle {
+  margin-top: 20rpx;
   font-size: 25rpx;
+  animation: fadeIn 2s;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .action {
+.tesla .swiper-container  .swiper-content .action {
   margin-top: 70rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .action .action-button {
+.tesla .swiper-container .swiper-content .action .action-button {
   border-radius: 30rpx;
   overflow: hidden;
   position: relative;
@@ -63,7 +68,7 @@
   padding: 5rpx 0;
   z-index: 1;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .action .action-button button {
+.tesla .swiper-container .swiper-content .action .action-button button {
   color: #ffffff;
   background: none;
   z-index: 1;
@@ -71,7 +76,7 @@
   height: 100%;
   font-size: 24rpx;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .action .action-button .action-button-back {
+.tesla .swiper-container .swiper-content .action .action-button .action-button-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -81,14 +86,14 @@
   z-index: 0;
   opacity: 0.4;
 }
-.tesla .swiper-container swiper .swiper-item .swiper-content .action .action-add {
-  margin-top: 8rpx;
+.tesla .swiper-container .swiper-content .action .action-add {
+  margin-top: 20rpx;
   font-size: 24rpx;
   color: #ffffff;
   text-decoration: underline;
 }
 
-.tesla .swiper-indicator {
+.tesla .swiper-container .swiper-indicator {
   position: absolute;
   bottom: 40rpx;
   left: 0;
@@ -96,12 +101,21 @@
   display: flex;
   justify-content: center;
 }
-.tesla .swiper-indicator .indicator {
-  width: 80rpx;
-  height: 6rpx;
+.tesla .swiper-container .swiper-indicator .indicator {
+  width: 60rpx;
+  height: 4rpx;
+  background-color: #bcbcb7;
+}
+
+.tesla .swiper-container .swiper-indicator .indicator.active {
   background-color: #ffffff;
 }
 
-.tesla .swiper-indicator .indicator.active {
-  background-color: #bcbcb7;
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
