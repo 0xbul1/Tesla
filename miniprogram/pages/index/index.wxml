@@ -1,2 +1,40 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="tesla">
+<view class="swiper-container">
+  <swiper autoplay bindchange="onSwiperChange">
+    <swiper-item  wx:for="{{ list }}"  wx:key="index">
+    <view class="swiper-item">
+      <image src="https://www.zhev.com.cn/file/upload/news/20211001/1634802055.jpg" mode="aspectFill"></image>
+      <view class="swiper-content">
+        <view class="title">
+          Model S
+        </view>
+        <view class="description">
+          <view class="desc-item">
+            <view class="desc-title">2100+</view>
+            <view class="desc-subtitle">升储存空间</view>
+          </view>
+          <view class="desc-item">
+            <view class="desc-title">2100+</view>
+            <view class="desc-subtitle">升储存空间</view>
+          </view>
+          <view class="desc-item">
+            <view class="desc-title">2100+</view>
+            <view class="desc-subtitle">升储存空间</view>
+          </view>
+        </view>
+        <view class="action">
+          <view class="action-button">
+            <button>预约试驾</button>
+            <view class="action-button-back"></view>
+          </view>
+          <view class="action-add">查看配置</view>
+        </view>
+      </view>
+    </view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="swiper-indicator">
+<view wx:for="{{ list }}" wx:key="index" class="indicator {{ current === index ? 'active': '' }}"></view>
+</view>
+</view>
